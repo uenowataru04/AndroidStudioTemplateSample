@@ -5,18 +5,26 @@
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
-    <depends>org.jetbrains.android</depends>
     <depends>org.jetbrains.kotlin</depends>
+    <depends>org.jetbrains.android</depends>
+
     <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.uenowataru04.androidstudiotemplatesample.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.uenowataru04.androidstudiotemplatesample.services.MyProjectService"/>
+    <extensions defaultExtensionNs="com.android">
+        <moduleDescriptionProvider implementation="other.SampleModuleDescriptionProvider" />
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.uenowataru04.androidstudiotemplatesample.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="other.SampleWizardTemplateProvider" />
+    </extensions>
+
+    <actions>
+
+        <action class="other.SampleModuleTemplateAction"
+            description="Description: SampleModuleTemplateAction" id="SampleModuleTemplateAction"
+            text="SampleModuleTemplateAction">
+            <add-to-group anchor="last" group-id="NewGroup" />
+        </action>
+    </actions>
 </idea-plugin>
