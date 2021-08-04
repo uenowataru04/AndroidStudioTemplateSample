@@ -12,19 +12,19 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.android">
-        <moduleDescriptionProvider implementation="other.SampleModuleDescriptionProvider" />
+        <moduleDescriptionProvider implementation="other.SampleModuleDescriptionProvider"/>
     </extensions>
 
     <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
-        <wizardTemplateProvider implementation="other.SampleWizardTemplateProvider" />
+        <wizardTemplateProvider implementation="other.SampleWizardTemplateProvider"/>
     </extensions>
 
     <actions>
 
         <action class="other.SampleModuleTemplateAction"
-            description="Description: SampleModuleTemplateAction" id="SampleModuleTemplateAction"
-            text="SampleModuleTemplateAction">
-            <add-to-group anchor="last" group-id="NewGroup" />
+                description="Description: SampleModuleTemplateAction" id="SampleModuleTemplateAction"
+                text="SampleModuleTemplateAction">
+            <add-to-group anchor="last" group-id="NewGroup"/>
         </action>
     </actions>
 </idea-plugin>
